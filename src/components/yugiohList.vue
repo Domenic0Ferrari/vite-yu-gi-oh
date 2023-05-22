@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <yugiohCardVue v-for="character in store.cardList" />
+    <yugiohCardVue v-for="character in store.cardList" :key="character.id" :characterData="character" />
 </template>
 
 <style scoped></style>
