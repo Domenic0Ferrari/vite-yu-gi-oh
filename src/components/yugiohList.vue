@@ -1,7 +1,20 @@
 <script>
-export default {};
+import yugiohCardVue from './yugiohCard.vue';
+import { store } from '../store';
+export default {
+    data() {
+        return {
+            store,
+        };
+    },
+    components: {
+        yugiohCardVue,
+    },
+};
 </script>
 
-<template></template>
+<template>
+    <yugiohCardVue v-for="character in store.cardList" />
+</template>
 
 <style scoped></style>

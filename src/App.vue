@@ -3,10 +3,11 @@ import headerVue from './components/header.vue';
 import yugiohListVue from './components/yugiohList.vue';
 import filterVue from './components/filter.vue';
 import axios from 'axios';
+import { store } from './store'
 export default {
   data() {
     return {
-
+      store,
     };
   },
   components: {
@@ -16,8 +17,7 @@ export default {
   },
   created() {
     // qui fare la richiesta all'api
-    axios
-
+    axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php").then(response => (this.store.cardList = response.data.data));
   },
 }
 </script>
