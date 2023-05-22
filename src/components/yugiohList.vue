@@ -1,7 +1,7 @@
-<script></script>
+<script>
+export default {};
+</script>
 
-<template>
-    Ciao
-</template>
+<template></template>
 
 <style scoped></style>
