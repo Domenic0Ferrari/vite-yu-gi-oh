@@ -27,7 +27,9 @@ export default {
   <main>
     <div class="container">
       <filterVue />
-      <yugiohListVue />
+      <div class="small_container">
+        <yugiohListVue />
+      </div>
     </div>
   </main>
 </template>
@@ -42,12 +44,16 @@ export default {
 
 main {
   background-color: #D48F38;
-  height: 600px;
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+.small_container {
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

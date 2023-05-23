@@ -12,4 +12,8 @@ export default {};
     </select>
 </template>
 
-<style scoped></style>
+<style scoped>
+select {
+    margin: 2rem 0;
+}
+</style>
