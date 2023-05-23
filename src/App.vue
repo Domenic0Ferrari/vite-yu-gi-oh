@@ -17,7 +17,8 @@ export default {
   },
   created() {
     // qui fare la richiesta all'api
-    axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0").then((response) => { console.log(response); (this.store.cardList = response.data.data) });
+    axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0").then(response => { console.log(response); (this.store.cardList = response.data.data) });
+    axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php').then(response => (this.store.archetypesList) = response.data);
   },
 }
 </script>
