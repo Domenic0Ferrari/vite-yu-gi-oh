@@ -15,6 +15,15 @@ export default {
     yugiohListVue,
     filterVue
   },
+  methods: {
+    requestDataFromApi() {
+      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0", {
+        params: {
+          archetype: this.store.searchArchetype,
+        },
+      }).then((response) => (this.store.cardList = response.data.data));
+    },
+  },
   created() {
     // qui fare la richiesta all'api
     axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0").then(response => { console.log(response); (this.store.cardList = response.data.data) });
@@ -27,7 +36,7 @@ export default {
   <headerVue />
   <main>
     <div class="container">
-      <filterVue />
+      <filterVue @performSearch="requestDataFromApi" />
       <div class="small_container">
         <yugiohListVue />
       </div>
