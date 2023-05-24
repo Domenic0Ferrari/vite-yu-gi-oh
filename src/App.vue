@@ -40,6 +40,7 @@ export default {
       <div class="small_container">
         <yugiohListVue />
       </div>
+      <div class="found-cards">Found {{ store.cardList.length }} Cards</div>
     </div>
   </main>
 </template>
